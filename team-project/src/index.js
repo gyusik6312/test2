@@ -1,14 +1,24 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from 'react';
+import       './index.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GetDBtest from './GetDBtest';
+import Compra from './Compra';
+import Clock from './time/Clock';
+import ClockTokyo from './ClockTokyo';
+import ClockSeoul from './time2/Clock';
+import Book from './Book';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GetDBtest ></GetDBtest>
+    <Book />
+    <ClockTokyo />
+    <ClockSeoul />
+    <Clock />
+    <Compra />
   </React.StrictMode>
 );
 
