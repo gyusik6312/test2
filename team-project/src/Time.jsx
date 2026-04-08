@@ -15,9 +15,9 @@ function Time({name, age})
         setText("");
     }
 
-    function handleOnChange(e)
+    function handlesetValue(e)
     {
-        setText(e.target.value)
+        setValue(e.target.value)
     }
 
     function handlesetdsam(e)
@@ -29,8 +29,7 @@ function Time({name, age})
     {
         setwetl(e.target.value)
     }
-
-    function handlesettlxzk(e)
+    lesettlxzk(e)
     {
         settlxzk(e.target.value)
     }
