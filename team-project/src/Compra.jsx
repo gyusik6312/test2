@@ -1,22 +1,38 @@
-import React from "react";
-import {useState, useRef } from "react";
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid'
+import interactionPlugin from '@fullcalendar/interaction'
+import { useState } from 'react';
+import ReactModal from 'react-modal';
 
-export default function Compra() {
-    const [state, setState] = useState(0);
-    let variable = 0;
-    const ref = useRef(0);
-    
+function Compra()
+{
+  const [modalOpen, setModal] = useState(false);
+
+  function handleDateClick(info)
+  {
+    setModal(true);
+  }
+
+  function closeModal()
+  {
+    setModal(false);
+  }
 
     return (
-        <div>
-            <p>state: {state}</p>
-            <button onClick={()=>{setState(state+1)}}>state: up!!</button>
+    <div style={{ width: "800px", margin: "0 auto" }}>
+      <FullCalendar plugins={[dayGridPlugin, interactionPlugin]}
+        initialView="dayGridMonth"
+        dateClick={handleDateClick}> 
+      </FullCalendar>
 
-            <p>variable: {variable}</p>
-            <button onClick={()=>{variable++}}>변수: up!!</button>
-
-            <p>Ref: {ref.current}</p>
-            <button onClick={()=>{ref.current++}}>ref: up!!</button>
-        </div>
-    )
+      <ReactModal
+        style = {{content: {width: "300px", height: "600px",  margin: "auto", backgroundColor: "rgba(245, 255, 137, 0.86)"}, overlay: {backgroundColor: "rgba(119, 116, 116, 0.5)"}}}
+        isOpen={modalOpen}
+        onRequestClose = {closeModal}
+        shouldCloseOnOverlayClick={true}>
+          캘린더
+      </ReactModal>
+    </div>
+    );
 }
+export default Compra;
