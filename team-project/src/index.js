@@ -4,12 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GetDBtest from './GetDBtest';
+import Compra from './Compra';
+import Time from './Time';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <GetDBtest ></GetDBtest>
-  </React.StrictMode>
+    <div>
+        <GetDBtest ></GetDBtest>
+        <Compra></Compra>
+        <Time name = "dsafkr" age={20}></Time>
+    </div>
 );
 
 // If you want to start measuring performance in your app, pass a function
